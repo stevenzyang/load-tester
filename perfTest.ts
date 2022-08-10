@@ -39,8 +39,9 @@ export async function runPerfTest(rpss: Array<number>, duration: number, testFn:
     durations.sort();
     const median = durations[Math.floor(durations.length/2)];
     const p95 = durations[Math.floor(.95 * durations.length)];
+    const max = durations[durations.length - 1]
     console.log(durations);
-    console.log(`Median: ${median}, p95: ${p95}`);
+    console.log(`Median: ${median}, p95: ${p95}, max: ${max}`);
     console.log("Errors: " + errors);
 }
 
